@@ -35,8 +35,18 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admin/dashboard') }}">รายการลา</a>
+                        <a class="nav-link " href="{{ url('/admin/dashboard') }}">รายการลา</a>
                       </li>
+                      <li class="nav-item dropdown">
+                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              {{ __('การจัดการข้อมูล') }} <span class="caret"></span>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('/admin/staff') }}">{{ __('ข้อมูลพนักงาน') }}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url('/admin/department') }}">{{ __('ข้อมูลแผนกงาน') }}</a>
+                            <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{{ url('/admin/position') }}">{{ __('ข้อมูลตำแหน่งงาน') }}</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -46,9 +56,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
+                            </li> -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

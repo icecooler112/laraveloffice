@@ -29,3 +29,11 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/dashboard', 'admin\AdminController@index');
     });
 });
+Route::resource('/admin/staff', 'StaffController'); //สร้างเส้นทางการทำงานของ Staff
+Route::get('/staff/{id}/delete' , 'StaffController@delete'); //ลบข้อมูล
+
+Route::resource('/admin/position', 'PositionController'); //สร้างเส้นทางการทำงานของ Department
+Route::get('/position/{id}/delete' , 'PositionController@delete'); //ลบข้อมูล
+
+Route::resource('/admin/department', 'DepartmentController'); //สร้างเส้นทางการทำงานของ Position
+Route::get('/department/{id}/delete' , 'DepartmentController@delete'); //ลบข้อมูล
